@@ -18,7 +18,17 @@ Run `ng generate component component-name` to generate a new component. You can 
 and navigate to http://localhost:4200/
 * edit app.component.html(project-name/src/app/app.component.html)
 * update title in project-name/src/app/app.component.ts
-* 
+* add{{}}in HTML and Eg:
+  in export class AppComponent {} add
+  1.sushiStyle: string = "Sushi Styles";(single time insert)
+  2.after export class AppComponent {} add class(if we need add multiple objests should build a class)
+    export class Styles {
+    public done: boolean = false;
+    constructor(public description: string) { }
+  }
+  firstStyle: Styles = new Styles("Chirashi-zushi (ちらし寿司, scattered sushi)");(use class)
+}
+* Build app/models folder, touch app/models/sushi.model.ts ,puts class in this file. Meanwhile, import { Styles } from './models/sushi.model'; on app/app.component.ts
 
 ## Build
 

@@ -8,10 +8,14 @@
 </div>
 <body>
   <h2>{{currentFocus}}</h2>
+  <p>{{sushiStyle}}</p>
   <ul>
-    <li>
-      {{sushiStyle}};
-    </li>
+    <li *ngFor="let currentStyle of styles">{{currentStyle.description}}/{{currentStyle.price}}</li>
+
+  </ul>
+  <p>{{ingredient}}</p>
+  <ul>
+    <li></li>
 
   </ul>
 </body>
