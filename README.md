@@ -41,6 +41,14 @@ eg,<li ngFor="let sushiStyle of styles">{{sushiStyle.description}}/{{sushiStyle.
 * property binding(data flows in the opposite direction)
 
 * two way binding( data flows in both directions)
+  1, if will take value by form, add
+  import { FormsModule }  from '@angular/forms';
+  in app.module.ts
+  add
+  FormsModule,
+  in "imports:" of app.module.ts
+  2, [(ngModel)]="selectedTask.description" as
+* Dynamic Edit Form
 
 ## Build
 

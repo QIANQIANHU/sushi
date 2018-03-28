@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Style } from './models/style.model';
 import { Ingredient } from './models/ingredient.model';
 import { Rice } from './models/rice.model';
+import { Guest } from './models/guest.model';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent {
   sushiStory: string = "Really expensive!";
   sushiStyle: string = "Sushi Styles";
   ingredient: string = "Fish Ingredient";
+  rice: string = "Rice Type";
 
   styles: Style [] = [
     new Style("Chirashi-zushi (ちらし寿司, scattered sushi)", 199),
@@ -35,14 +37,19 @@ export class AppComponent {
     new Ingredient("mackerel (saba)", 55),
     new Ingredient("salmon (sake)", 60),
   ]
+  rices: Rice [] = [
+    new Rice("Tamaki Gold", 30),
+    new Rice("Tamanishiki", 40),
+    new Rice("Kokuho", 50),
+  ]
+  placeSushiStyle(){
+    alert("clickable!");
+  }
 
-  // placeSushiStyle(){
-  //   alert("clickable!");
-  // }
-  //
-  // placeSushiIngredient(){
-  //
-  // }
+  placeSushiIngredient(){
+    alert("clickable too!");
+  }
+
 
   availableEveryday(fishIngredient){
     if (fishIngredient.price <= 55){
@@ -53,4 +60,15 @@ export class AppComponent {
       return "text-danger";
     }
   }
+
+  selectedRice = null;//set initlize condition of sth
+  // selectedRice: Rice = this.rices[1];//set default value of redio button form
+
+  editRice(clickedRice) {
+    this.selectedRice = clickedRice;
+  }
+  finishedEditing() {
+    this.selectedRice = null;//push some value
+  }
+
 }

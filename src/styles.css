@@ -4,14 +4,19 @@ h1 {
   font-family: monospace;
   color: #A5901A;
 }
-h2, h6 {
+h2, h6 , label {
   color: beige;
 }
+.option1 {
+   color: beige;
+ }
 p {
   color: beige;
 }
 li {
   color: beige;
+  margin-top: 10px;
+  margin-top: 10px;
 }
 body {
   background-color: #000000;
