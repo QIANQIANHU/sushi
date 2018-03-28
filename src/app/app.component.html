@@ -6,16 +6,46 @@
   </h1>
   <img width="300" alt="sushi logo" src="https://theultralinx.com/.image/c_limit%2Ccs_srgb%2Cq_80%2Cw_800/MTI5MDI1MjE1MzQ5OTI2NTMx/163.webp">
 </div>
-<body>
-  <h2>{{currentFocus}}</h2>
+<body class="container">
+  <h2>{{sushiStory}}</h2>
+  <h6>
+    Sushi
+    2007feb-sushi-odaiba-manytypes.jpg
+    Different types of nigiri-sushi and a long, tapered temaki; gari (pickled ginger) is in the upper right; served with soy sauce and chopsticks
+    Alternative names	すし, 寿司, 鮨
+    Course	appetizer, main dish
+    Place of origin	Japan
+    Associated national cuisine	Japanese cuisine
+    Serving temperature	cold
+    Main ingredients	vinegared rice
+    Ingredients generally used	seafood, cooked or raw, and vegetables
+     Cookbook: Sushi   Media: Sushi
+    Sushi (すし, 寿司, 鮨) is a Japanese dish of specially prepared vinegared rice (鮨飯 sushi-meshi), usually with some sugar and salt, combined with a variety of ingredients (ネタ neta), such as seafood (most commonly and often raw), vegetables, and occasionally tropical fruits. Styles of sushi and its presentation vary widely, but the key ingredient is "sushi rice", also referred to as shari (しゃり), or sumeshi (酢飯). The term sushi is no longer used in its original context and literally means "sour-tasting."</h6>
   <p>{{sushiStyle}}</p>
   <ul>
-    <li *ngFor="let currentStyle of styles">{{currentStyle.description}}/{{currentStyle.price}}</li>
+    <li *ngFor="let sushiStyle of styles">{{sushiStyle.description}}/{{sushiStyle.price}}</li>
+    <!-- sushiStyle can be anyname we want to replace styles in app.components.ts -->
+    <button (click)="placeSushiStyle()">Place your sushi style</button>
 
+
+    <!-- (click)="placeSushiStyle()" is event binding -->
+    <!-- click is target event(click,keydown and focus are also target event) -->
+    <!-- someMethod() is template statement -->
   </ul>
   <p>{{ingredient}}</p>
   <ul>
-    <li></li>
-
+    <li [class]="availableEveryday(fishIngredient)" *ngFor="let fishIngredient of ingredients">{{fishIngredient.description}}/{{fishIngredient.price}}</li>
+    <button (click)="placeSushiIngredient">Place your sushi Fish</button>
+    <!-- <li *ngFor="let fishIngredient of ingredients">{{fishIngredient.description}}/{{fishIngredient.price}}</li> -->
   </ul>
+
+  <!-- <P>Rice Type</P>
+  <label>Enter Task Description:</label>
+  <input [(ngModel)]="selectedTask.description">
+  <label>Enter your Priority (1-3):</label>
+  <br>
+  <input type="radio" [(ngModel)]="selectedTask.priority" [value]="1">1 (Low Priority)<br>
+  <input type="radio" [(ngModel)]="selectedTask.priority" [value]="2">2 (Medium Priority)<br>
+  <input type="radio" [(ngModel)]="selectedTask.priority" [value]="3">3 (High Priority) -->
+
 </body>

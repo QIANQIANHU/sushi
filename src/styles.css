@@ -4,7 +4,7 @@ h1 {
   font-family: monospace;
   color: #A5901A;
 }
-h2{
+h2, h6 {
   color: beige;
 }
 p {
